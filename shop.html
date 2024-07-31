@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Shop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #343a40; /* Dark mode background */
+            color: #f8f9fa; /* Dark mode text color */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar {
+            background-color: #495057; /* Dark mode navbar */
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #ffc107; /* Accent color on hover */
+        }
+        .main-content {
+            padding: 80px 20px 20px;
+        }
+        .section {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #6c757d;
+            border-radius: 10px;
+            background-color: #495057; /* Dark mode section background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #ffc107; /* Accent color for headings */
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff; /* Chatbot button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-iframe {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            width: 370px;
+            height: 430px;
+            border: 1px solid #6c757d;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        .light-mode {
+            background-color: #f5f5f5; /* Light mode background */
+            color: #333; /* Light mode text color */
+        }
+        .light-mode .navbar {
+            background-color: #f8c291; /* Light mode navbar */
+        }
+        .light-mode .navbar a {
+            color: #fff;
+        }
+        .light-mode .navbar a:hover {
+            background-color: #ff6f61; /* Accent color on hover */
+        }
+        .light-mode .section {
+            background-color: #ffffff; /* Light mode section background */
+            border-color: #e0e0e0;
+        }
+        .light-mode .section h2 {
+            color: #ff6f61; /* Accent color for headings */
+        }
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Food Shop</a>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle-button" onclick="toggleMode()">Switch Mode</button>
+    <div class="main-content">
+        <div class="section" id="home">
+            <h2>Welcome to Our Food Shop!</h2>
+            <p>We offer a delightful range of dishes made with fresh ingredients. Explore our menu and specials to find your next favorite meal!</p>
+        </div>
+        <div class="section" id="menu">
+            <h2>Menu</h2>
+            <p>Check out our delicious menu items:</p>
+            <ul>
+                <li>Dish 1: Description and price.</li>
+                <li>Dish 2: Description and price.</li>
+                <li>Dish 3: Description and price.</li>
+            </ul>
+        </div>
+        <div class="section" id="specials">
+            <h2>Specials</h2>
+            <p>Don’t miss out on our daily specials:</p>
+            <ul>
+                <li>Special 1: Description and price.</li>
+                <li>Special 2: Description and price.</li>
+                <li>Special 3: Description and price.</li>
+            </ul>
+        </div>
+        <div class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have any questions or want to place an order? Get in touch with us:</p>
+            <p>Email: contact@foodshop.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 123 Food Street, Culinary City, Country</p>
+        </div>
+    </div>
+    <button class="chatbot-button" onclick="toggleChatbot()">Chat with us</button>
+    <iframe class="chatbot-iframe" id="chatbotIframe" width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/ab0487de-0b7d-44fc-91b6-3019403a67d4"></iframe>
+
+    <script>
+        // Function to toggle between light and dark modes
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            const button = document.querySelector('.toggle-button');
+            if (document.body.classList.contains('light-mode')) {
+                button.textContent = 'Dark Mode';
+            } else {
+                button.textContent = 'Light Mode';
+            }
+        }
+
+        // Function to toggle the visibility of the chatbot
+        function toggleChatbot() {
+            const iframe = document.getElementById('chatbotIframe');
+            if (iframe.style.display === 'none' || iframe.style.display === '') {
+                iframe.style.display = 'block';
+            } else {
+                iframe.style.display = 'none';
+            }
+        }
+
+        // Initialize with dark mode by default
+        document.body.classList.add('dark-mode');
+    </script>
+</body>
+</html>
