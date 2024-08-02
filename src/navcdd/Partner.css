@@ -1,0 +1,44 @@
+.headingPartner1{
+    color: rgb(0, 0, 0);
+}
+.section1{
+    position: relative;
+    background-image: url('/WorldMap.png');
+    background-size: cover;
+    background-position: top; 
+    background-repeat: no-repeat;
+    text-align: center;
+    max-width: fit-content;
+}
+
+
+.content {
+    position: relative;
+    z-index: 1; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul{
+    align-items: center;
+}
+li{
+    display: inline;
+    margin: 15px;
+}
+.viewCompaniesbtn{
+    background-color: #407BFF;
+    color: white;
+    padding: 15px;
+    border: none;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.viewCompaniesbtn:hover{
+    background-color: #1e65ff;
+    cursor: pointer;
+    border: none;
+}
+

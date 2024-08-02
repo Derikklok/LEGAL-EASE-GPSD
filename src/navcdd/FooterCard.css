@@ -1,0 +1,34 @@
+.footerbtn{
+    border: none;
+    background-color: #407BFF;
+    color: white;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 20px;
+}
+.footerbtn:hover{
+    background-color: #0051ff;
+    cursor: pointer;
+}
+.cardSec1{
+    border: 1px solid rgb(224, 224, 224);
+    background-color: white;
+    box-shadow: 3px 3px 5px rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+}
+
+.bubbly{
+    width: 300px;
+    margin-left: 100%;
+}
+
+.cardSec2{
+    margin-left: 100px;
+}
+
+.largeHead{
+    font-size: 35px;
+    color: blue;
+}

@@ -1,0 +1,10 @@
+.container-align{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 50px;
+}
+
+.element-h2{
+    padding: 10px;
+}

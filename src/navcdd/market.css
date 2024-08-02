@@ -1,0 +1,52 @@
+.hd1{
+    text-align: center;
+}
+.hd2{
+    padding-left: 60px;
+    font-weight: bold; 
+}
+.btn4{
+    background-color: #fff;
+    color: #407BFF;
+    border: 2px solid #407BFF;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+}
+.btn4:hover{
+    background-color: #407BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.imgCard{
+    margin-top: 2%;
+    padding-left: 50px;
+    display: flex;
+    text-align: justify;
+}
+
+.imgtag{
+    width: 50%;
+    height: 681px;
+    float: right;
+}
+
+.imgDescription{
+    float: left;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: justify;
+}
+
+.imgDescription p{
+    font-size: 20px;
+    margin-top: 10%;
+}
+
+.imgDescription button{
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 10%;
+}
